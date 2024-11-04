@@ -28,7 +28,7 @@
                             class="nav-icon bi bi-layout-text-sidebar"></i>
                         <p>Category</p>
                     </a> </li>
-                <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i
+                <li class="nav-item"> <a href="{{ route('suppliers.index') }}" class="nav-link"> <i
                             class="nav-icon bi bi-truck"></i>
                         <p>Supplier</p>
                     </a> </li>
