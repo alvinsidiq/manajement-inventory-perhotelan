@@ -9,33 +9,55 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
-                            class="nav-icon bi bi-speedometer"></i>
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                             Dashboard
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="./index.html" class="nav-link active"> <i
-                                    class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item">
+                            <a href="{{ url('/dashboard') }}"
+                                class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-circle"></i>
                                 <p>Dashboard v1</p>
-                            </a> </li>
-
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item"> <a href="{{ route('categories.index') }}" class="nav-link"> <i
-                            class="nav-icon bi bi-layout-text-sidebar"></i>
+                <li class="nav-item">
+                    <a href="{{ route('categories.index') }}"
+                        class="nav-link {{ request()->routeIs('categories.index') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-layout-text-sidebar"></i>
                         <p>Category</p>
-                    </a> </li>
-                <li class="nav-item"> <a href="{{ route('suppliers.index') }}" class="nav-link"> <i
-                            class="nav-icon bi bi-truck"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('suppliers.index') }}"
+                        class="nav-link {{ request()->routeIs('suppliers.index') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-truck"></i>
                         <p>Supplier</p>
-                    </a> </li>
-                <li class="nav-item"> <a href="{{ route('items.index') }}" class="nav-link"> <i
-                            class="nav-icon bi bi-box"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('items.index') }}"
+                        class="nav-link {{ request()->routeIs('items.index') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-box"></i>
                         <p>Items</p>
-                    </a> </li>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('transactions.index') }}"
+                        class="nav-link {{ request()->routeIs('transactions.index') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-box"></i>
+                        <p>Transactions</p>
+                    </a>
+                </li>
                 <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>
                             Widgets

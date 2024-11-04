@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('category_id'); // Foreign key ke `categories`
             $table->integer('quantity');
-            $table->decimal('unit_price', 8, 2);
+            $table->decimal('unit_price', 12, 2);
             $table->unsignedBigInteger('supplier_id'); // Foreign key ke `suppliers`
             $table->timestamps();
 

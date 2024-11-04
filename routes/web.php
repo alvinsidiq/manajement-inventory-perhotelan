@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,10 +19,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    Route::resource('items', ItemController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('suppliers', SupplierController::class);
+
+    // Route Resource untuk Transactions
+    Route::resource('transactions', TransactionController::class);
 });
 
-Route::resource('items', ItemController::class);
-Route::resource('categories', CategoryController::class);
-Route::resource('suppliers', SupplierController::class);
+
 
 require __DIR__ . '/auth.php';
