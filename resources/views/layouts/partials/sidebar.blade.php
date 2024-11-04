@@ -1,7 +1,7 @@
 <!--begin::Sidebar-->
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
     <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link">
-            <!--begin::Brand Image--> <img src="adminlte/assets/img/AdminLTELogo.png" alt="AdminLTE Logo"
+            <!--begin::Brand Image--> <img src="{{ asset('adminlte/assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                 class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span
                 class="brand-text fw-light">AdminLTE 4</span> <!--end::Brand Text--> </a>
         <!--end::Brand Link-->
@@ -24,9 +24,17 @@
 
                     </ul>
                 </li>
+                <li class="nav-item"> <a href="{{ route('categories.index') }}" class="nav-link"> <i
+                            class="nav-icon bi bi-layout-text-sidebar"></i>
+                        <p>Category</p>
+                    </a> </li>
                 <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i
-                            class="nav-icon bi bi-palette"></i>
-                        <p>Theme Generate</p>
+                            class="nav-icon bi bi-truck"></i>
+                        <p>Supplier</p>
+                    </a> </li>
+                <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i
+                            class="nav-icon bi bi-box"></i>
+                        <p>Items</p>
                     </a> </li>
                 <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>

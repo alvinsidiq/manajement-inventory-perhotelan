@@ -15,14 +15,20 @@ return new class extends Migration
             $table->id('item_id');
             $table->string('name');
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id'); // Foreign key ke `categories`
             $table->integer('quantity');
             $table->decimal('unit_price', 8, 2);
-            $table->unsignedBigInteger('supplier_id');
+            $table->unsignedBigInteger('supplier_id'); // Foreign key ke `suppliers`
             $table->timestamps();
 
-            $table->foreign('category_id')->references('category_id')->on('categories');
-            $table->foreign('supplier_id')->references('supplier_id')->on('suppliers');
+
+            if (Schema::hasTable('categories')) {
+                $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            }
+
+            if (Schema::hasTable('suppliers')) {
+                $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+            }
         });
     }
 
