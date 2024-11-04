@@ -32,7 +32,7 @@
                             class="nav-icon bi bi-truck"></i>
                         <p>Supplier</p>
                     </a> </li>
-                <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i
+                <li class="nav-item"> <a href="{{ route('items.index') }}" class="nav-link"> <i
                             class="nav-icon bi bi-box"></i>
                         <p>Items</p>
                     </a> </li>
