@@ -9,6 +9,7 @@ use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\InventoryCategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,6 +36,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('room_types', RoomTypeController::class);
     Route::resource('rooms', RoomController::class);
+
+    Route::resource('inventory_categories', InventoryCategoryController::class);
 });
 
 

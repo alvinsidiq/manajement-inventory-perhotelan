@@ -33,6 +33,25 @@
                             </a> </li>
                     </ul>
                 </li>
+
+                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-house-door"></i>
+                    <p>
+                        Inventory Management
+                        <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item"> <a href="{{ route('inventory_categories.index') }}" class="nav-link"> <i
+                                class="nav-icon bi bi-door-closed"></i></i>
+                            <p>Inventory Categories</p>
+                        </a> </li>
+                    <li class="nav-item"> <a href="{{ route('rooms.index') }}" class="nav-link"> <i
+                                class="nav-icon bi bi-door-open"></i>
+                            <p>Room</p>
+                        </a> </li>
+                </ul>
+            </li>
+
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}"
                         class="nav-link {{ request()->routeIs('categories.index') ? 'active' : '' }}">
