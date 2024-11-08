@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomTypeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,8 +28,9 @@ Route::middleware('auth')->group(function () {
 
     // Route Resource untuk Transactions
     Route::resource('transactions', TransactionController::class);
-});
 
+    Route::resource('room_types', RoomTypeController::class);
+});
 
 
 require __DIR__ . '/auth.php';

@@ -27,6 +27,26 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item"> <a href="" class="nav-link"> <i class="nav-icon bi bi-download"></i>
+                        <p>Installation</p>
+                    </a> </li>
+                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-house-door"></i>
+                        <p>
+                            Room Management
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item"> <a href="{{ route('room_types.index') }}" class="nav-link"> <i
+                                    class="nav-icon bi bi-door-closed"></i></i>
+                                <p>Room Type</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i
+                                    class="nav-icon bi bi-door-open"></i>
+                                <p>Room</p>
+                            </a> </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}"
                         class="nav-link {{ request()->routeIs('categories.index') ? 'active' : '' }}">
