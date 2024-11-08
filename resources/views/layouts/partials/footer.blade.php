@@ -8,6 +8,3 @@
     <!--end::Copyright-->
 </footer> <!--end::Footer-->
 </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
-
-
-

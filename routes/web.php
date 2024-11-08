@@ -8,6 +8,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
+use App\Http\Controllers\RoomController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('transactions', TransactionController::class);
 
     Route::resource('room_types', RoomTypeController::class);
+    Route::resource('rooms', RoomController::class);
 });
 
 

@@ -27,7 +27,7 @@
                                     class="nav-icon bi bi-door-closed"></i></i>
                                 <p>Room Type</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="#" class="nav-link"> <i
+                        <li class="nav-item"> <a href="{{ route('rooms.index') }}" class="nav-link"> <i
                                     class="nav-icon bi bi-door-open"></i>
                                 <p>Room</p>
                             </a> </li>
