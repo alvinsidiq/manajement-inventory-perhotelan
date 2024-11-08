@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\InventoryCategoryController;
+use App\Http\Controllers\InventoryController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('rooms', RoomController::class);
 
     Route::resource('inventory_categories', InventoryCategoryController::class);
+    Route::resource('inventory', InventoryController::class);
 });
 
 
