@@ -34,24 +34,37 @@
                     </ul>
                 </li>
 
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-house-door"></i>
+                <li
+                    class="nav-item {{ Request::is('inventory_categories*') || Request::is('inventory*') || Request::is('inventory_allocations*') ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link
+        {{ Request::is('inventory_categories*') || Request::is('inventory*') || Request::is('inventory_allocations*') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-box-seam"></i>
                         <p>
-                            Inventory Management
+                            Inventory Menu
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="{{ route('inventory_categories.index') }}" class="nav-link"> <i
-                                    class="nav-icon bi bi-door-closed"></i></i>
+                        <li class="nav-item"> <a href="{{ route('inventory_categories.index') }}"
+                                class="nav-link
+        {{ Request::is('inventory_categories*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-folder2"></i>
                                 <p>Inventory Categories</p>
                             </a> </li>
-                        <li class="nav-item"> <a href="{{ route('inventory.index') }}" class="nav-link"> <i
-                                    class="nav-icon bi bi-door-open"></i>
+                        <li class="nav-item"> <a href="{{ route('inventory.index') }}"
+                                class="nav-link {{ Request::is('inventory') ? 'active' : '' }}"> <i
+                                    class="nav-icon bi bi-box"></i>
                                 <p>Inventories</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="{{ route('inventory_allocations.index') }}"
+                                class="nav-link {{ Request::is('inventory_allocations*') ? 'active' : '' }}"> <i
+                                    class="nav-icon bi bi-arrow-left-right"></i>
+                                <p>Inventory Allocations</p>
                             </a> </li>
                     </ul>
                 </li>
-
+                <hr>
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}"
                         class="nav-link {{ request()->routeIs('categories.index') ? 'active' : '' }}">

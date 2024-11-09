@@ -11,6 +11,7 @@ use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\InventoryCategoryController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\InventoryAllocationController;
 
 
 Route::get('/', function () {
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('inventory_categories', InventoryCategoryController::class);
     Route::resource('inventory', InventoryController::class);
+    Route::resource('inventory_allocations', InventoryAllocationController::class);
 });
 
 
