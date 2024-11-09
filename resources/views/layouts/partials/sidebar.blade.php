@@ -1,9 +1,9 @@
 <!--begin::Sidebar-->
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
     <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link">
-            <!--begin::Brand Image--> <img src="{{ asset('adminlte/assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+            <!--begin::Brand Image--> <img src="{{ asset('adminlte/assets/img/LOGQ.png') }}" alt="Logo"
                 class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span
-                class="brand-text fw-light">AdminLTE 4</span> <!--end::Brand Text--> </a>
+                class="brand-text fw-light">SI Inventory</span> <!--end::Brand Text--> </a>
         <!--end::Brand Link-->
     </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
     <div class="sidebar-wrapper">
@@ -45,9 +45,9 @@
 
 
 
-                <li class="nav-item {{ Request::is('guests*') || Request::is('rooms*') ? 'menu-open' : '' }}">
+                <li class="nav-item {{ Request::is('guests*') || Request::is('reservations*') ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ Request::is('guests*') || Request::is('rooms*') ? 'active' : '' }}">
+                        class="nav-link {{ Request::is('guests*') || Request::is('reservations*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-house-door"></i>
                         <p>
                             Reservation
@@ -63,10 +63,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('rooms.index') }}"
-                                class="nav-link {{ Request::is('rooms*') ? 'active' : '' }}">
+                            <a href="{{ route('reservations.index') }}"
+                                class="nav-link {{ Request::is('reservations*') ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-door-open"></i>
-                                <p>Room</p>
+                                <p>Reservations</p>
                             </a>
                         </li>
                     </ul>

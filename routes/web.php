@@ -13,6 +13,8 @@ use App\Http\Controllers\InventoryCategoryController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\InventoryAllocationController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\ReservationController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,7 +47,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('inventory_allocations', InventoryAllocationController::class);
 
     Route::resource('guests', GuestController::class);
+    Route::resource('reservations', ReservationController::class);
 });
+
+
+
 
 
 require __DIR__ . '/auth.php';
