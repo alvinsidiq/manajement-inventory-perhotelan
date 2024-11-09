@@ -16,21 +16,59 @@
                         <p>Dashboard</p>
                     </a> </li>
 
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-house-door"></i>
+                <li class="nav-item {{ Request::is('room_types*') || Request::is('rooms*') ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ Request::is('room_types*') || Request::is('rooms*') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-house-door"></i>
                         <p>
                             Room Management
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="{{ route('room_types.index') }}" class="nav-link"> <i
-                                    class="nav-icon bi bi-door-closed"></i></i>
+                        <li class="nav-item">
+                            <a href="{{ route('room_types.index') }}"
+                                class="nav-link {{ Request::is('room_types*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-door-closed"></i>
                                 <p>Room Type</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="{{ route('rooms.index') }}" class="nav-link"> <i
-                                    class="nav-icon bi bi-door-open"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('rooms.index') }}"
+                                class="nav-link {{ Request::is('rooms*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-door-open"></i>
                                 <p>Room</p>
-                            </a> </li>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="nav-item {{ Request::is('guests*') || Request::is('rooms*') ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ Request::is('guests*') || Request::is('rooms*') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-house-door"></i>
+                        <p>
+                            Reservation
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('guests.index') }}"
+                                class="nav-link {{ Request::is('guests*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-door-closed"></i>
+                                <p>Guests</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('rooms.index') }}"
+                                class="nav-link {{ Request::is('rooms*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-door-open"></i>
+                                <p>Room</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
