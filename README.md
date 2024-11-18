@@ -87,6 +87,7 @@ composer install
 ## Instal Dependensi npm
 
 npm install
+
 npm run dev
 
 ## 5. Menyalin File .env dan Konfigurasi
