@@ -14,6 +14,9 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\InventoryAllocationController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ConsumableController;
+use App\Http\Controllers\ConsumableCategoryController;
+use App\Http\Controllers\ConsumableAllocationController;
 
 
 Route::get('/', function () {
@@ -48,6 +51,11 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('guests', GuestController::class);
     Route::resource('reservations', ReservationController::class);
+
+    Route::resource('consumables', ConsumableController::class);
+    Route::post('/consumables/{id}/add-stock', [ConsumableController::class, 'addStock'])->name('consumables.add_stock');
+    Route::resource('consumable_categories', ConsumableCategoryController::class);
+    Route::resource('consumable_allocations', ConsumableAllocationController::class);
 });
 
 

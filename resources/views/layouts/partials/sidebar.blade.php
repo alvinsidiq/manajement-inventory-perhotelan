@@ -1,7 +1,7 @@
 <!--begin::Sidebar-->
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
     <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link">
-            <!--begin::Brand Image--> <img src="{{ asset('adminlte/assets/img/LOGQ.png') }}" alt="Logo"
+            <!--begin::Brand Image--> <img src="{{ asset('adminlte/assets/img/LOGO1.png') }}" alt="Logo"
                 class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span
                 class="brand-text fw-light">SI Inventory</span> <!--end::Brand Text--> </a>
         <!--end::Brand Link-->
@@ -103,6 +103,46 @@
                     </ul>
                 </li>
                 <hr>
+                <li
+                    class="nav-item {{ Request::is('consumable_categories*') || Request::is('consumables*') || Request::is('consumable_allocations*') ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link
+    {{ Request::is('consumable_categories*') || Request::is('consumables*') || Request::is('consumable_allocations*') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-box-seam"></i>
+                        <p>
+                            Cons. Amenities
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('consumable_categories.index') }}"
+                                class="nav-link
+            {{ Request::is('consumable_categories*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-list-task"></i>
+                                <p>Categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('consumables.index') }}"
+                                class="nav-link
+            {{ Request::is('consumables*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-box"></i>
+                                <p>Consumables Items</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('consumable_allocations.index') }}"
+                                class="nav-link
+            {{ Request::is('consumable_allocations*') ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard-check"></i>
+                                <p>Allocations</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <hr>
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}"
                         class="nav-link {{ request()->routeIs('categories.index') ? 'active' : '' }}">
@@ -134,7 +174,8 @@
                         <p>Transactions</p>
                     </a>
                 </li>
-                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                <li class="nav-item"> <a href="#" class="nav-link"> <i
+                            class="nav-icon bi bi-box-seam-fill"></i>
                         <p>
                             Widgets
                             <i class="nav-arrow bi bi-chevron-right"></i>
