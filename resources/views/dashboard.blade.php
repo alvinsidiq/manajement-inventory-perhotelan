@@ -23,62 +23,67 @@
     <div class="app-content"> <!--begin::Container-->
         <div class="container-fluid"> <!--begin::Row-->
             <div class="row"> <!--begin::Col-->
-                <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 1-->
-                    <div class="small-box text-bg-info">
-                        <div class="inner">
-                            <h3>150</h3>
-                            <p>Total Items</p>
+                <div class="col-sm-12 text-end">
+                    <h3 class="mb-0">Rooms</h3>
+                </div>
+            </div>
+            <div class="row my-4">
+                <!-- Total Room Types -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <a href="{{ route('room_types.index') }}" class="info-box-icon text-bg-info shadow-sm">
+                            <i class="bi bi-house-fill"></i>
+                        </a>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Room Types</span>
+                            <span class="info-box-number">{{ $totalRoomTypes }}</span>
                         </div>
-                        <a href="#"
-                            class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                            More info <i class="bi bi-link-45deg"></i> </a>
-                    </div> <!--end::Small Box Widget 1-->
-                </div> <!--end::Col-->
-                <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 2-->
-                    <div class="small-box text-bg-success">
-                        <div class="inner">
-                            <h3>53<sup class="fs-5">%</sup></h3>
-                            <p>Total Categories</p>
-                        </div> <a href="#"
-                            class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                            More info <i class="bi bi-link-45deg"></i> </a>
-                    </div> <!--end::Small Box Widget 2-->
-                </div> <!--end::Col-->
-                <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 3-->
-                    <div class="small-box text-bg-warning">
-                        <div class="inner">
-                            <h3>44</h3>
-                            <p>Total Suppliers</p>
-                        </div> <a href="#"
-                            class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover">
-                            More info <i class="bi bi-link-45deg"></i> </a>
-                    </div> <!--end::Small Box Widget 3-->
-                </div> <!--end::Col-->
-                <div class="col-lg-3 col-6"> <!--begin::Small Box Widget 4-->
-                    <div class="small-box text-bg-danger">
-                        <div class="inner">
-                            <h3>65</h3>
-                            <p>Total Transactions</p>
-                        </div> <a href="#"
-                            class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                            More info <i class="bi bi-link-45deg"></i> </a>
-                    </div> <!--end::Small Box Widget 4-->
-                </div> <!--end::Col-->
-            </div> <!--end::Row--> <!--begin::Row-->
-            <div class="row"> <!-- Start col -->
-                <div class="col-lg-7 connectedSortable">
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <h3 class="card-title">Sales Value</h3>
+                    </div>
+                </div>
+
+                <!-- Total Rooms -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <a href="{{ route('rooms.index') }}" class="info-box-icon text-bg-success shadow-sm">
+                            <i class="bi bi-door-open-fill"></i>
+                        </a>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Rooms</span>
+                            <span class="info-box-number">{{ $totalRooms }}</span>
                         </div>
-                        <div class="card-body">
+                    </div>
+                </div>
 
+                <!-- Total Reservations -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <a href="{{ route('reservations.index') }}" class="info-box-icon text-bg-warning shadow-sm">
+                            <i class="bi bi-calendar-check-fill"></i>
+                        </a>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Reservations</span>
+                            <span class="info-box-number">{{ $totalReservations }}</span>
                         </div>
-                    </div> <!-- /.card -->
+                    </div>
+                </div>
 
-                </div> <!-- /.Start col --> <!-- Start col -->
+                <!-- Total Guests -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <a href="{{ route('guests.index') }}" class="info-box-icon text-bg-danger shadow-sm">
+                            <i class="bi bi-person-fill"></i>
+                        </a>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Guests</span>
+                            <span class="info-box-number">{{ $totalGuests }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            </div> <!-- /.row (main row) -->
-        </div> <!--end::Container-->
+
+        </div> <!--end::Row--> <!--begin::Row-->
+
+    </div> <!--end::Container-->
     </div> <!--end::App Content-->
 @endsection

@@ -110,7 +110,7 @@
     {{ Request::is('consumable_categories*') || Request::is('consumables*') || Request::is('consumable_allocations*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-box-seam"></i>
                         <p>
-                            Cons. Amenities
+                            Consumable Am.
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
