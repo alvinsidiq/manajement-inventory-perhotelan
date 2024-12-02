@@ -68,7 +68,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## 1. Persiapkan Lingkungan (Environment)
 Pastikan Anda sudah menginstal perangkat lunak berikut:
 
-PHP (Versi yang sesuai dengan aplikasi Laravel, biasanya PHP 8.0 atau lebih tinggi)
+PHP (Versi yang sesuai dengan aplikasi Laravel, biasanya PHP 8.2 atau lebih tinggi)
 Composer (untuk manajemen dependensi Laravel)
 Database seperti MySQL, PostgreSQL, SQLite, dll (tergantung aplikasi Laravel yang diunduh)
 
