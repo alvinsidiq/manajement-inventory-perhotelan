@@ -462,4 +462,59 @@ File .env juga menyimpan kunci aplikasi (APP_KEY) yang digunakan untuk mengenkri
 ```
 php artisan key:generate
 ```
+### LANGKAH-LANGKAH INSTALASI : 
 
+1. Clone Repository dari GitHub
+```
+https://github.com/alvinsidiq/manajemen_administrasi_perhotelan.git
+```
+2. Masuk ke Direktori Aplikasi
+   ```
+   cd manajemen_administrasi_perhotelan
+   ```
+3. install composer
+   ```
+   composer install
+   ```
+4. install npm
+   ```
+   npm install
+   ```
+5. jalankan npm
+   ```
+   npm run dev
+   ```
+6. Menyalin File .env dan Konfigurasi
+   ```
+   cp .env.example .env
+   ```
+7. Konfigurasi Database dan Pengaturan Lainnya Buka file .env dan sesuaikan pengaturan database dan konfigurasi lainnya sesuai kebutuhan aplikasi. Misalnya, atur pengaturan database Anda:
+   ```
+   DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+
+    DB_PORT=3306
+
+    DB_DATABASE=nama_database
+    
+    DB_USERNAME=root
+
+    DB_PASSWORD=
+    ```
+8. Migrate Database
+   ```
+   php artisan migrate
+   ```
+9. Menjalankan Server Development
+    ```
+    php artisan serve
+    ```
+10. Mengatur Kunci Aplikasi (Application Key)
+    ```
+    php artisan key:generate
+    ```
+11. Jika ada error, coba jalankan perintah :
+    ```
+    php artisan optimize
+    ```
+   
