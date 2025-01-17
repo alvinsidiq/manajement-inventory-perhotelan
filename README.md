@@ -33,7 +33,7 @@ php --version
    ```
 ## ERD Diagram Sistem Manajemen Inventaris Perhotelan
 
-![Logo Proyek](assets/images/logo.png)
+![Logo Proyek](public/adminlte/assets/img/erd.png)
 
 Sistem ini mengelola manajemen kamar, inventaris, transaksi, dan pengguna di hotel dengan berbagai fitur penting untuk mempermudah pengelolaan. Di bawah ini adalah penjelasan detail mengenai **Entity-Relationship Diagram (ERD)** dan struktur database untuk sistem ini.
 
