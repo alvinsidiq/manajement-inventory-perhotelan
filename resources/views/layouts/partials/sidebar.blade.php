@@ -142,6 +142,52 @@
                     </ul>
                 </li>
 
+                <li
+                    class="nav-item {{ Request::is('unconsumable_categories*') || Request::is('unconsumables*') || Request::is('unconsumable_allocations*')|| Request::is('laporan*') ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link
+    {{ Request::is('unconsumable_categories*') || Request::is('unconsumables*') || Request::is('unconsumable_allocations*')|| Request::is('laporan*') ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-box-seam"></i>
+                        <p>
+    Unconsumable Am.
+    <i class="nav-arrow bi bi-chevron-right"></i>
+</p>
+</a>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+        <a href="{{ route('unconsumable_categories.index') }}"
+            class="nav-link {{ Request::is('unconsumable_categories*') ? 'active' : '' }}">
+            <i class="nav-icon bi bi-list-task"></i>
+            <p>Categories</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('unconsumables.index') }}"
+            class="nav-link {{ Request::is('unconsumables*') ? 'active' : '' }}">
+            <i class="nav-icon bi bi-box"></i>
+            <p>Unconsumables Items</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('unconsumable_allocations.index') }}"
+            class="nav-link {{ Request::is('unconsumable_allocations*') ? 'active' : '' }}">
+            <i class="nav-icon bi bi-clipboard-check"></i>
+            <p>Allocations</p>
+        </a>
+    </li>
+
+    <!-- Menambahkan Item Menu untuk Laporan -->
+    <li class="nav-item">
+        <a href="{{ route('laporan.index') }}"
+            class="nav-link {{ Request::is('laporan*') ? 'active' : '' }}">
+            <i class="nav-icon bi bi-file-earmark-pdf"></i>
+            <p>Laporan</p>
+        </a>
+    </li>
+</ul>
+</li>
+
+
                 <hr>
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}"

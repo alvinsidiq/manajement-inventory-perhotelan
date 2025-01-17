@@ -2,15 +2,15 @@
 
 @section('content')
     <div class="container">
-        <h1>Edit Consumable</h1>
-        <form action="{{ route('consumables.update', $consumable->id) }}" method="POST">
+        <h1>Edit Unconsumable</h1>
+        <form action="{{ route('unconsumables.update', $unconsumable->id) }}" method="POST">
             @csrf
             @method('PUT')
 
             <!-- Nama Barang -->
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" id="name" value="{{ $consumable->name }}"
+                <input type="text" name="name" class="form-control" id="name" value="{{ $unconsumable->name }}"
                     required>
             </div>
 
@@ -20,7 +20,7 @@
                 <select name="category_id" id="category_id" class="form-select" required>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}"
-                            {{ $consumable->category_id == $category->id ? 'selected' : '' }}>
+                            {{ $unconsumable->category_id == $category->id ? 'selected' : '' }}>
                             {{ $category->name }}
                         </option>
                     @endforeach
@@ -30,7 +30,7 @@
             <!-- Stok Barang -->
             <div class="mb-3">
                 <label for="stock" class="form-label">Stock</label>
-                <input type="number" name="stock" class="form-control" id="stock" value="{{ $consumable->stock }}"
+                <input type="number" name="stock" class="form-control" id="stock" value="{{ $unconsumable->stock }}"
                     required>
             </div>
 
@@ -38,21 +38,17 @@
             <div class="mb-3">
                 <label for="reorder_level" class="form-label">Reorder Level</label>
                 <input type="number" name="reorder_level" class="form-control" id="reorder_level"
-                    value="{{ $consumable->reorder_level }}" required>
+                    value="{{ $unconsumable->reorder_level }}" required>
             </div>
 
             <!-- Harga Barang -->
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="number" step="0.01" name="price" class="form-control" id="price"
-                    value="{{ $consumable->price }}" required>
+                    value="{{ $unconsumable->price }}" required>
             </div>
 
-            <!-- Deskripsi Barang -->
-            <!-- <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textara name="description" class="form-control" id="description" rows="4">{{ $consumable->description }}</textarea>
-            </div> -->
+           
 
             <!-- Tombol Submit -->
             <button type="submit" class="btn btn-primary">Update</button>

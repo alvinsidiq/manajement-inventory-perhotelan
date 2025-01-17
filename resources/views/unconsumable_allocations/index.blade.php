@@ -1,19 +1,21 @@
 @extends('layouts.app')
 
+@section('title', 'Unconsumable Allocations')
+
 @section('content')
 <div class="container py-4">
     <!-- Header Section -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h1 class="h3 mb-0">Consumable Allocations</h1>
-            <p class="text-muted mb-0">Allocate consumables to rooms</p>
+            <h1 class="h3 mb-0">Unconsumable Allocations</h1>
+            <p class="text-muted mb-0">Manage all unconsumable allocations</p>
         </div>
-        <a href="{{ route('consumable_allocations.create') }}" class="btn btn-primary">
+        <a href="{{ route('unconsumable_allocations.create') }}" class="btn btn-primary">
             <i class="fas fa-plus me-2"></i>Add Allocation
         </a>
     </div>
 
-    <!-- Consumable Allocations Table Card -->
+    <!-- Allocations Table Card -->
     <div class="card shadow-sm">
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -21,7 +23,7 @@
                     <thead class="bg-light">
                         <tr>
                             <th class="px-4">#</th>
-                            <th>Consumable</th>
+                            <th>Unconsumable</th>
                             <th>Room</th>
                             <th>Allocated By</th>
                             <th>Quantity</th>
@@ -31,18 +33,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($allocations as $allocation)
+                        @forelse ($allocations as $allocation)
                             <tr>
                                 <td class="px-4 fw-semibold">{{ $loop->iteration }}</td>
-                                <td>{{ $allocation->consumable->name }}</td>
+                                <td>{{ optional($allocation->unconsumable)->name ?? 'N/A' }}</td>
                                 <td>{{ $allocation->room->room_number }}</td>
                                 <td>{{ $allocation->user->name }}</td>
                                 <td>{{ $allocation->quantity }}</td>
                                 <td>{{ $allocation->allocated_at }}</td>
-                                <td>{{ ucfirst($allocation->status) }}</td>
+                                <td>
+                                    @if ($allocation->status == 'dalam pemakaian')
+                                        <span class="badge bg-success">{{ $allocation->status }}</span>
+                                    @elseif ($allocation->status == 'rusak')
+                                        <span class="badge bg-warning">{{ $allocation->status }}</span>
+                                    @elseif ($allocation->status == 'hilang')
+                                        <span class="badge bg-danger">{{ $allocation->status }}</span>
+                                    @else
+                                        <span class="badge bg-info">{{ $allocation->status }}</span>
+                                    @endif
+                                </td>
                                 <td class="text-end px-4">
                                     <div class="btn-group">
-                                        <a href="{{ route('consumable_allocations.edit', $allocation->id) }}" 
+                                        <a href="{{ route('unconsumable_allocations.edit', $allocation->id) }}" 
                                            class="btn btn-sm btn-outline-primary">
                                             <i class="fas fa-edit me-1"></i>Edit
                                         </a>
@@ -63,11 +75,11 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
                                                 <div class="modal-body text-start">
-                                                    <p class="mb-0">Are you sure you want to delete the allocation of consumable "{{ $allocation->consumable->name }}" to Room {{ $allocation->room->room_number }}? This action cannot be undone.</p>
+                                                    <p class="mb-0">Are you sure you want to delete the allocation for room "{{ $allocation->room->room_number }}"? This action cannot be undone.</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                                    <form action="{{ route('consumable_allocations.destroy', $allocation->id) }}" method="POST" class="d-inline">
+                                                    <form action="{{ route('unconsumable_allocations.destroy', $allocation->id) }}" method="POST" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">Delete Allocation</button>
@@ -78,7 +90,16 @@
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="8" class="text-center py-4">
+                                    <div class="text-muted">
+                                        <i class="fas fa-box-open mb-2 fa-2x"></i>
+                                        <p class="mb-0">No allocations found. Click "Add Allocation" to create one.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

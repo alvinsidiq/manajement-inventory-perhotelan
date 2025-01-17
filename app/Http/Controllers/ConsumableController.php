@@ -10,7 +10,7 @@ class ConsumableController extends Controller
 {
     public function index()
     {
-        $consumables = Consumable::with('category')->paginate(10);
+        $consumables = Consumable::with('category')->paginate();// 10 ambil semua data 
         $categories = ConsumableCategory::all();
 
         return view('consumables.index', compact('consumables', 'categories'));

@@ -12,7 +12,7 @@ class ConsumableAllocationController extends Controller
 {
     public function index()
     {
-        $allocations = ConsumableAllocation::with(['consumable', 'room', 'user'])->paginate(10);
+        $allocations = ConsumableAllocation::with(['consumable', 'room', 'user'])->paginate();// tampilkan semua 
         return view('consumable_allocations.index', compact('allocations'));
     }
 

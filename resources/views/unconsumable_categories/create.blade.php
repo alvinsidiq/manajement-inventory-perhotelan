@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Add Supplier')
+@section('title', 'Add Category')
 
 @section('content')
 <div class="container py-4">
@@ -8,24 +8,23 @@
         <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Add New Supplier</h4>
+                    <h4 class="mb-0">Add New Category</h4>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('suppliers.index') }}" class="btn btn-light mb-4">Back to Suppliers</a>
+                    <a href="{{ route('unconsumable_categories.index') }}" class="btn btn-light mb-4">Back to Categories</a>
 
-                    <form action="{{ route('suppliers.store') }}" method="POST" class="needs-validation" novalidate>
+                    <form action="{{ route('unconsumable_categories.store') }}" method="POST" class="needs-validation" novalidate>
                         @csrf
 
-                        <!-- Supplier Name -->
+                        <!-- Name Field -->
                         <div class="mb-4">
-                            <label for="name" class="form-label fw-bold">Supplier Name</label>
+                            <label for="name" class="form-label fw-bold">Name</label>
                             <input type="text" 
-                                   class="form-control @error('name') is-invalid @enderror" 
-                                   id="name" 
                                    name="name" 
+                                   id="name" 
+                                   class="form-control @error('name') is-invalid @enderror" 
                                    value="{{ old('name') }}" 
-                                   required 
-                                   placeholder="Enter supplier name">
+                                   required>
                             @error('name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -33,30 +32,14 @@
                             @enderror
                         </div>
 
-                        <!-- Contact Info -->
+                        <!-- Description Field -->
                         <div class="mb-4">
-                            <label for="contact_info" class="form-label fw-bold">Contact Info</label>
-                            <input type="text" 
-                                   class="form-control @error('contact_info') is-invalid @enderror" 
-                                   id="contact_info" 
-                                   name="contact_info" 
-                                   value="{{ old('contact_info') }}" 
-                                   placeholder="Enter contact info">
-                            @error('contact_info')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <!-- Address -->
-                        <div class="mb-4">
-                            <label for="address" class="form-label fw-bold">Address</label>
-                            <textarea class="form-control @error('address') is-invalid @enderror" 
-                                      id="address" 
-                                      name="address" 
-                                      placeholder="Enter address">{{ old('address') }}</textarea>
-                            @error('address')
+                            <label for="description" class="form-label fw-bold">Description</label>
+                            <textarea name="description" 
+                                      id="description" 
+                                      class="form-control @error('description') is-invalid @enderror" 
+                                      rows="4">{{ old('description') }}</textarea>
+                            @error('description')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -65,13 +48,13 @@
 
                         <!-- Form Actions -->
                         <div class="d-flex gap-2 justify-content-end">
-                            <a href="{{ route('suppliers.index') }}" 
+                            <a href="{{ route('unconsumable_categories.index') }}" 
                                class="btn btn-light">
                                 Cancel
                             </a>
                             <button type="submit" 
                                     class="btn btn-primary px-4">
-                                Add Supplier
+                                Save Category
                             </button>
                         </div>
                     </form>

@@ -9,7 +9,7 @@ class ConsumableCategoryController extends Controller
 {
     public function index()
     {
-        $categories = ConsumableCategory::paginate(10);
+        $categories = ConsumableCategory::paginate(); // 10 tampilakan semua data 
         return view('consumable_categories.index', compact('categories'));
     }
 

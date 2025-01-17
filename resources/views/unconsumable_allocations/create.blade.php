@@ -16,24 +16,7 @@
                     <form action="{{ route('transactions.store') }}" method="POST" class="needs-validation" novalidate>
                         @csrf
 
-                        <!-- Item Selection -->
-                        <div class="mb-4">
-                            <label for="item_id" class="form-label fw-bold">Item</label>
-                            <select name="item_id" id="item_id" class="form-select @error('item_id') is-invalid @enderror" required>
-                                <option value="">Select Item</option>
-                                @foreach ($items as $item)
-                                    <option value="{{ $item->item_id }}" {{ old('item_id') == $item->item_id ? 'selected' : '' }}>
-                                        {{ $item->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            @error('item_id')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
+                       
                         <!-- Transaction Type -->
                         <div class="mb-4">
                             <label for="transaction_type" class="form-label fw-bold">Transaction Type</label>
